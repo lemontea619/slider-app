@@ -8,11 +8,21 @@ const li = document.querySelector("li");
 console.log(li);
 
 function clickRightButton() {
-  listElement.scrollLeft += li.scrollWidth;
+  if (listElement.scrollLeft == listElement.scrollWidth - li.scrollWidth) {
+    listElement.scrollLeft = 0;
+  } else {
+    listElement.scrollLeft += li.scrollWidth;
+  }
   console.log("clickRightButton");
+  console.log(listElement.scrollLeft);
 }
 
 const clickLeftButton = () => {
-  listElement.scrollLeft -= li.scrollWidth;
+  if (listElement.scrollLeft == 0) {
+    listElement.scrollLeft = listElement.scrollWidth - li.scrollWidth;
+  } else {
+    listElement.scrollLeft -= li.scrollWidth;
+  }
   console.log("clickLeftButton");
+  console.log(listElement.scrollLeft);
 };
