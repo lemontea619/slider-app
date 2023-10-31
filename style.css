@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+li {
+  list-style: none;
+  background-color: aqua;
+  width: 100%;
+  flex-shrink: 0;
+  font-size: 48px;
+  text-align: center;
+  padding: 120px 0;
+  z-index: 10;
+}
+ul {
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
