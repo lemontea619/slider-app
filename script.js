@@ -5,24 +5,29 @@ const listElement = document.getElementById("list");
 // listElement.style.transform = "translateX(-500px)";
 
 const li = document.querySelector("li");
-console.log(li);
+console.log(listElement);
 
+let translateX = 0;
 function clickRightButton() {
-  if (listElement.scrollLeft == listElement.scrollWidth - li.scrollWidth) {
-    listElement.scrollLeft = 0;
+  if (translateX > li.scrollWidth - listElement.scrollWidth) {
+    translateX -= li.scrollWidth;
+    listElement.style.transform = `translateX(${translateX}px)`;
   } else {
-    listElement.scrollLeft += li.scrollWidth;
+    translateX = 0;
+    listElement.style.transform = `translateX(${translateX}px)`;
   }
+  // translateX -= li.scrollWidth;
+  // listElement.style.transform = `translateX(${translateX}px)`;
   console.log("clickRightButton");
-  console.log(listElement.scrollLeft);
 }
 
 const clickLeftButton = () => {
-  if (listElement.scrollLeft == 0) {
-    listElement.scrollLeft = listElement.scrollWidth - li.scrollWidth;
+  if (translateX < 0) {
+    translateX += li.scrollWidth;
+    listElement.style.transform = `translateX(${translateX}px)`;
   } else {
-    listElement.scrollLeft -= li.scrollWidth;
+    translateX = li.scrollWidth - listElement.scrollWidth;
+    listElement.style.transform = `translateX(${translateX}px)`;
   }
   console.log("clickLeftButton");
-  console.log(listElement.scrollLeft);
 };

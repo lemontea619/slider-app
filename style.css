@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow: hidden;
 }
 li {
   list-style: none;
@@ -14,6 +15,5 @@ li {
 ul {
   padding: 0;
   display: flex;
-  overflow: hidden;
   width: 100%;
 }
