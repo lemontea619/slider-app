@@ -16,4 +16,5 @@ ul {
   padding: 0;
   display: flex;
   width: 100%;
+  transition-duration: 1s;
 }
